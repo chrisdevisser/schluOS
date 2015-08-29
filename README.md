@@ -1,10 +1,9 @@
 This is the result of me following the tutorials on http://wiki.osdev.org/.
-So far, I've had no luck getting the freestanding C++ headers to work, which is really unfortunate.
+So far, I've had no luck getting the freestanding C++ headers to work, which is really unfortunate. Everything is rather messy and squished into kernel.cpp right now, but that's due to change.
 
-Current build instructions are manual using a cross compiled GCC 6.0 for i686-elf. The last step requires qemu.
+There's a really poor makefile to use with a cross compiled GCC 6.0 for i686-elf:
 
-1. Assemble src/boot.s to bin/boot.o.
-2. Compile kernel/src/kernel.cpp to kernel/bin/kernel.o.
-3. Use g++ with src/linker.ld to combine bin/boot.o and kernel/bin/kernel.o into bin/schluOS.bin.
-4. Run make_iso.sh.
-5. Run launch_iso.sh or launch_kernel.sh. 
+- Build OS: make os
+- Build ISO: make/make iso
+- Run kernel in qemu: make run
+- Run ISO in qemu: make run_iso
