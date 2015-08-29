@@ -62,6 +62,15 @@ private:
 	//	bbbbffff
 	auto color8() const -> uint8_t;
 
+	//Moves the cursor down one cell, wrapping to the top.
+	auto cursor_down() -> void;
+
+	//Moves the cursor to the beginning of the next line.
+	auto cursor_newline() -> void;
+
+	//Moves the cursor right one cell, wrapping to the same line.
+	auto cursor_right() -> void;
+
 	//Make an integer suitable for writing to the buffer.
 	//If f = foreground, b = background, c = character:
 	//	bbbbffffcccccccc
@@ -83,24 +92,14 @@ auto vga_terminal::clear() -> void {
 	}
 }
 
-auto vga_terminal::color8() const -> uint8_t {
-	return (static_cast<int>(bg_color_) << 4) | static_cast<int>(fg_color_);
-}
-
-auto vga_terminal::make_entry(const char c) const -> uint16_t {
-	return make_entry(c, color8());
-}
-
-auto vga_terminal::make_entry(const char c, const uint8_t color) -> uint16_t {
-	return (color << 8) | static_cast<unsigned char>(c); //color is promoted, so << 8 is okay.
-}
-
 auto vga_terminal::put(const char c) -> void {
 	put_at(c, x_, y_);
 
-	x_ = (x_ + 1) % Width;
-	if (x_ == 0) {
-		y_ = (y_ + 1) % Height;
+	if (c != '\n') {
+		cursor_right();
+		if (x_ == 0) {
+			cursor_down();
+		}
 	}
 }
 
@@ -112,12 +111,43 @@ auto vga_terminal::put(const char* sz) -> void {
 
 auto vga_terminal::put_at(const char c, const int x, const int y) -> void {
 	auto index{y*Width + x};
-	Buffer[index] = make_entry(c);
+
+	if (c == '\n') {
+		Buffer[index] = make_entry(' ');
+		cursor_newline();
+	} else {
+		Buffer[index] = make_entry(c);
+	}
+}
+
+auto vga_terminal::color8() const -> uint8_t {
+	return (static_cast<int>(bg_color_) << 4) | static_cast<int>(fg_color_);
+}
+
+auto vga_terminal::cursor_down() -> void {
+	y_ = (y_ + 1) % Height;
+}
+
+auto vga_terminal::cursor_newline() -> void {
+	x_ = 0;
+	cursor_down();
+}
+
+auto vga_terminal::cursor_right() -> void {
+	x_ = (x_ + 1) % Width;
+}
+
+auto vga_terminal::make_entry(const char c) const -> uint16_t {
+	return make_entry(c, color8());
+}
+
+auto vga_terminal::make_entry(const char c, const uint8_t color) -> uint16_t {
+	return (color << 8) | static_cast<unsigned char>(c); //color is promoted, so << 8 is okay.
 }
 
 extern "C" 
 auto _kernel_main() -> void {
 	vga_terminal vga_term;
 	vga_term.clear(); 
-	vga_term.put("Hello, kernel world!");
+	vga_term.put("Hello, kernel world!\nThis is on a separate line.\n\nWhat fun!");
 }
