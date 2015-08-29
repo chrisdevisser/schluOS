@@ -26,19 +26,18 @@ _start:
 	#set stack pointer to our stack
 	movl $stack_top, %esp
 
+	call _kernel_init
+
 	#call global constructors and other initialization tasks
 	call _init
 
 	#execute our C entry point, _kernel_main
 	call _kernel_main
 
-	#call global destructors and other deinitialization tasks
-	call _fini
-
 	#go into an infinite loop 
 	cli #clear interrupts
-	hlt #halt (until next interrupt)
 .Lhang:
+	hlt #halt (until next interrupt)
 	jmp .Lhang
 
 #set size of _start to current location minus label location
