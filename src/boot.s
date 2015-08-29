@@ -26,8 +26,14 @@ _start:
 	#set stack pointer to our stack
 	movl $stack_top, %esp
 
+	#call global constructors and other initialization tasks
+	call _init
+
 	#execute our C entry point, _kernel_main
 	call _kernel_main
+
+	#call global destructors and other deinitialization tasks
+	call _fini
 
 	#go into an infinite loop 
 	cli #clear interrupts

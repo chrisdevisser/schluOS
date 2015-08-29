@@ -84,12 +84,15 @@ constexpr int vga_terminal::Height;
 
 vga_terminal::vga_terminal() {
 	clear();
+	put("Constructor\n");
 }
 
 auto vga_terminal::clear() -> void {
 	for (auto i{0}; i < Width*Height; ++i) {
 		put(' ');
 	}
+
+	x_ = y_ = 0;
 }
 
 auto vga_terminal::put(const char c) -> void {
@@ -145,9 +148,10 @@ auto vga_terminal::make_entry(const char c, const uint8_t color) -> uint16_t {
 	return (color << 8) | static_cast<unsigned char>(c); //color is promoted, so << 8 is okay.
 }
 
+vga_terminal vga_term;
+
 extern "C" 
 auto _kernel_main() -> void {
-	vga_terminal vga_term;
-	vga_term.clear(); 
-	vga_term.put("Hello, kernel world!\nThis is on a separate line.\n\nWhat fun!");
+	// vga_terminal vga_term;
+	vga_term.put("Hello, kernel world!\nThis is on a separate line.\n\nWhat fun!\n");
 }

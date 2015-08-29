@@ -6,6 +6,13 @@ AS=i686-elf-as
 KERNEL_OBJ=kernel/obj/kernel.o
 OS_OBJ=obj/boot.o $(KERNEL_OBJ)
 
+CRTI_OBJ=obj/crti.o
+CRTBEGIN_OBJ:=$(shell $(CXX) $(CXXFLAGS) -print-file-name=crtbegin.o)
+CRTEND_OBJ:=$(shell $(CXX) $(CXXFLAGS) -print-file-name=crtend.o)
+CRTN_OBJ=obj/crtn.o
+
+OS_AUG_OBJ:=$(CRTI_OBJ) $(CRTBEGIN_OBJ) $(OS_OBJ) $(CRTEND_OBJ) $(CRTN_OBJ)
+
 OSNAME=schluOS
 OS_BIN=bin/$(OSNAME).bin
 
@@ -13,9 +20,9 @@ ISODIR=bin/iso
 
 all: iso
 
-os: $(OS_OBJ)
+os: $(OS_AUG_OBJ)
 	mkdir -p bin
-	$(CXX) -T src/linker.ld -O2 -ffreestanding -nostdlib -o $(OS_BIN) $(OS_OBJ) -lgcc
+	$(CXX) -T src/linker.ld -O2 -ffreestanding -nostdlib -o $(OS_BIN) $(OS_AUG_OBJ) -lgcc
 
 iso: os
 	mkdir -p $(ISODIR)/boot
@@ -30,9 +37,9 @@ run_iso: iso
 run: os
 	qemu-system-i386 -kernel $(OS_BIN)
 
-obj/boot.o: src/boot.s
+obj/%.o: src/%.s
 	mkdir -p obj
-	$(AS) src/boot.s -o obj/boot.o
+	$(AS) $< -o $@
 
 kernel/obj/kernel.o: kernel/src/kernel.cpp
 	mkdir -p kernel/obj
