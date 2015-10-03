@@ -1,0 +1,32 @@
+#pragma once
+
+#include "detail/null.hh"
+#include "detail/size_t.hh"
+
+namespace std {
+
+///ptrdiff_t - [support.types]/5
+///Signed integer type that can hold the difference of two subscripts in an array. 
+using ptrdiff_t = long;
+
+///max_align_t - [support.types]/8
+///POD type whose alignment requirement is at least as great as that of every scalar type,
+///and whose alignment requirement is supported in every context. 
+
+//A bit different than the one GCC provides.
+//Enlighten me why the equivalent of alignas(alignof(same type)) is needed.
+typedef struct max_align_t {
+    long long __ll;
+    long double __ld;
+} max_align_t;
+
+///nullptr_t - [support.types]/9
+///Defined as namespace std {typedef decltype(nullptr) nullptr_t;}
+using nullptr_t = decltype(nullptr);
+
+}
+
+///offsetof - C99 7.17/3
+///Expands to an integer constant expression with type size_t and value
+///#bytes from the beginning of type to member. 
+#define offsetof(type, member) __builtin_offsetof(type, member)
