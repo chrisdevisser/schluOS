@@ -1,0 +1,132 @@
+#pragma once
+
+///C99 5.2.4.2.2
+///s: sign (1 or -1)
+///b (=2): base/radix of exponent representation (integer > 1)
+///e: exponent (integer in [e_min and e_max])
+///p (=24,53,64): precision (number of base-2 digits in significand)
+///f_k: 0s and 1s (the significand digits)
+
+///A floating-point number x is:
+///x = s * b^e * sum (k=1 to p) (f_k * b^-k)
+
+///Normalized: f_1 > 0 if x != 0
+///Subnormal: x != 0, e = e_min, f_1 = 0
+///Unnormalized: x != 0, e > e_min, f_1 = 0
+
+///NaN can either propagate through operations (quiet)
+///or raise a floating-point exception (signaling)
+
+///C99 5.2.4.2.2/6
+///All integer values except FLT_ROUNDS can be used in #if.
+///All floating values are constant expressions.
+
+///FLT_ROUNDS - C99 5.2.4.2.2/7
+///See <limits> for the enum of values.
+///Note 18: This should reflect calls to fesetround.
+
+//Because of the note, we'll delegate this macro to fegetround.
+namespace std {
+    int fegetround();
+}
+
+#define FLT_ROUNDS std::fegetround()
+
+///See <limits> for the enum of values.
+#define FLT_EVAL_METHOD 2 //evaluate operations and constants to the range and precision of long double
+
+///b
+#define FLT_RADIX 2
+
+///p
+#define FLT_MANT_DIG 24
+#define DBL_MANT_DIG 53
+#define LDBL_MANT_DIG 64
+
+///Number of decimal digits n such that any floating-point number
+///with p_max base-b digits can be rounded to a floating-point number
+///with n decimal digits and back again without change to the value.
+///= ceil(1 + p_max*log10(b))
+///= ceil(1 + 64*0.3) note log10(2) is about 0.3
+#define DECIMAL_DIG 21
+
+///*_DIG - C99 5.2.4.2.2/9
+///Number of decimal digits q such that any floating-point number
+///with q decimal digits can be rounded into a floating-point number
+///with p base-b digits and back again without change to the value.
+///= floor((p-1)*log10(b))
+
+///= floor(23*0.3)
+#define FLT_DIG 6
+///= floor(52*0.3)
+#define DBL_DIG 15
+///= floor(63*0.3)
+#define LDBL_DIG 18
+
+
+///Minimum negative integer e_min such that b^(e_min-1) is normalized.
+#define FLT_MIN_EXP -125
+#define DBL_MIN_EXP -1021
+#define LDBL_MIN_EXP -16381
+
+///*_MIN_10_EXP - C99 5.2.4.2.2/9
+///Minimum negative integer y such that 10^y is in the range of normalized floating-point numbers
+///= ceil(log10(b^(e_min-1)))
+
+///= ceil(-126*0.3)
+#define FLT_MIN_10_EXP -37
+///~= ceil(-1022*0.3) (log10(2) > 0.3)
+#define DBL_MIN_10_EXP -307
+///~= ceil(-16382*0.3)
+#define LDBL_MIN_10_EXP -4931
+
+///*_MAX_EXP - C99 5.2.4.2.2/9
+///Maximum integer e_max such that b^(e_max-1) is representable and finite.
+#define FLT_MAX_EXP 128
+#define DBL_MAX_EXP 1024
+#define LDBL_MAX_EXP 16384
+
+///*_MAX_10_EXP - C99 5.2.4.2.2/9
+///Maximum integer y such that 10^y is in the range of representable finite floating-point numbers.
+///= floor(log10((1-b^-p) * b^e_max))
+
+///= floor(log10((1 - 2^-24) * 2^128))
+#define FLT_MAX_10_EXP 38
+///= floor(log10((1 - 2^-53) * 2^1024))
+#define DBL_MAX_10_EXP 308
+///= floor(log10((1 - 2^-64) * 2^16384))
+#define LDBL_MAX_10_EXP 4932
+
+///*_MAX - C99 5.2.4.2.2/10
+///Maximum representable finite floating-point number.
+///= (1-b^-p) * b^e_max
+
+///= (1 - 2^-24) * 2^128
+#define FLT_MAX 3.40282'35e38f
+///= (1 - 2^-53) * 2^1024
+#define DBL_MAX 1.79769'31348'62315'7e308
+///= (1 - 2^-64) * 2^16384
+#define LDBL_MAX 1.18973'14953'57231'765e4932l
+
+///*_EPSILON - C99 5.2.4.2.2/11
+///The difference between 1 and the least value greater than 1
+///that is representable in the given floating-point type.
+///= b^(1-p)
+
+///= 2^-23
+#define FLT_EPSILON 1.19209'29e-7f
+///= 2^-52
+#define DBL_EPSILON 2.22044'60492'50313e-16
+///= 2^-63
+#define LDBL_EPSILON 1.08420'21724'85504'434e-19l
+
+///*_MIN - C99 5.2.4.2.2/11
+///Minimum normalized positive floating-point number.
+///= b^(e_min-1)
+
+///= 2^-126
+#define FLT_MIN 1.17549'44e-38f
+///= 2^-1022
+#define DBL_MIN 2.22507'38585'072014e-308
+///= 2^-16382
+#define LDBL_MIN 3.36210'31431'12093'5063e-4932l
