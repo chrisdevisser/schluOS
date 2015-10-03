@@ -2,5 +2,6 @@
 
 //This gets its own file because of being defined in multiple headers.
 
-//A null pointer constant. [support.types]/3
+///NULL - [support.types]/3
+///A null pointer constant.
 #define NULL nullptr

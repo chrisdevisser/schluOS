@@ -4,7 +4,8 @@
 
 namespace std {
 
-//Unsigned integer type large enough to contain the size in bytes of any object. [support.types]/6
+///size_t - [support.types]/6
+///Unsigned integer type large enough to contain the size in bytes of any object.
 using size_t = unsigned long;
 
 }
