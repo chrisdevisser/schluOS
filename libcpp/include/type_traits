@@ -3,6 +3,7 @@
 ///Helper classes
 #include "detail/type_traits/bool_constant.hh"
 #include "detail/type_traits/integral_constant.hh"
+#include "detail/type_traits/true_type.hh"
 
 ///Unary type traits
 
