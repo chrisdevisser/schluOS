@@ -1,0 +1,28 @@
+#pragma once
+
+///Helper classes
+#include "detail/type_traits/integral_constant.hh"
+
+///Unary type traits
+
+///Composite type traits (unimplemented)
+
+///Type properties (unimplemented)
+
+///Type property queries (unimplemented)
+
+///Relationships between types
+
+///Transformations between types
+
+///=> Const-volatile modifications
+
+///=> Reference modifications (unimplemented)
+
+///=> Sign modifications (unimplemented)
+
+///=> Array modifications (unimplemented)
+
+///=> Pointer modifications (unimplemented)
+
+///=> Other transformations (unimplemented)
