@@ -21,6 +21,7 @@
 
 ///=> Const-volatile modifications
 #include "detail/type_traits/remove_const.hh"
+#include "detail/type_traits/remove_volatile.hh"
 
 ///=> Reference modifications (unimplemented)
 
