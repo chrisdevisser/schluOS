@@ -3,11 +3,11 @@
 
 extern "C"
 auto _kernel_init() -> void {
-	kernel::tty::stream ttyout;
-	ttyout.clear();
+    kernel::tty::stream ttyout;
+    ttyout.clear();
 }
 
-extern "C" 
+extern "C"
 auto _kernel_main() -> void {
-	puts("Hello, kernel world!");
+    puts("Hello, kernel world!");
 }

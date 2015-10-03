@@ -7,7 +7,7 @@ cp sysroot/boot/schluOS.kernel isodir/boot/schluOS.kernel
 
 cat > isodir/boot/grub/grub.cfg << EOF
 menuentry "schluOS" {
-	multiboot /boot/schluOS.kernel
+    multiboot /boot/schluOS.kernel
 }
 EOF
 
