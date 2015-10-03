@@ -15,6 +15,7 @@
 ///Type property queries (unimplemented)
 
 ///Relationships between types
+#include "detail/type_traits/is_same.hh"
 
 ///Transformations between types
 
