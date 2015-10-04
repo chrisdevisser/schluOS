@@ -5,7 +5,7 @@
 namespace std {
 
 ///is_class - [meta.unary.cat]
-///True iff T is a class type, but not a union type, per [basic.compound].
+///True iff remove_cv_t<_T> is a class type, but not a union type, per [basic.compound].
 //One of this and is_union is impossible to implement without compiler support.
 template<typename _T>
 struct is_class : bool_constant<__is_class(_T)> {};
