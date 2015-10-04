@@ -5,7 +5,7 @@
 namespace std {
 
 ///is_trivially_copyable - [meta.unary.prop]
-///True iff _T is a trivially_copyable type per [basic.types].
+///True iff _T is a trivially-copyable type per [basic.types].
 template<typename _T>
 struct is_trivially_copyable : bool_constant<__is_trivially_copyable(_T)> {};
 
