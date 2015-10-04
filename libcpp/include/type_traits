@@ -8,6 +8,7 @@
 
 ///Unary type traits
 #include "detail/type_traits/is_array.hh"
+#include "detail/type_traits/is_class.hh"
 #include "detail/type_traits/is_enum.hh"
 #include "detail/type_traits/is_floating_point.hh"
 #include "detail/type_traits/is_function.hh"
