@@ -35,6 +35,7 @@
 
 ///=> Type properties
 #include "detail/type_traits/is_const.hh"
+#include "detail/type_traits/is_empty.hh"
 #include "detail/type_traits/is_literal_type.hh"
 #include "detail/type_traits/is_pod.hh"
 #include "detail/type_traits/is_standard_layout.hh"
