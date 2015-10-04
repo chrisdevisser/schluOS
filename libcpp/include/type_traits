@@ -72,4 +72,5 @@
 
 ///=> Pointer modifications (unimplemented)
 
-///=> Other transformations (unimplemented)
+///=> Other transformations
+#include "detail/type_traits/void_t.hh"
