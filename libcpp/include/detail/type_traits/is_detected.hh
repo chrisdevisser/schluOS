@@ -8,6 +8,7 @@
 
 namespace std {
 
+//If _Op<_Args...> is valid, _Op<_Args...>, otherwise nonesuch.
 template<template<typename...> typename _Op, typename... _Args>
 using is_detected = typename detected_or<nonesuch, _Op, _Args...>::value_t;
 
