@@ -7,6 +7,8 @@
 #include "detail/type_traits/true_type.hh"
 
 ///Unary type traits
+
+///=> Primary type categories
 #include "detail/type_traits/is_array.hh"
 #include "detail/type_traits/is_class.hh"
 #include "detail/type_traits/is_enum.hh"
@@ -22,10 +24,11 @@
 #include "detail/type_traits/is_union.hh"
 #include "detail/type_traits/is_void.hh"
 
-///Composite type traits (unimplemented)
+///=> Composite type traits (unimplemented)
 #include "detail/type_traits/is_member_pointer.hh"
+#include "detail/type_traits/is_reference.hh"
 
-///Type properties (unimplemented)
+///=> Type properties (unimplemented)
 
 ///Type property queries (unimplemented)
 
