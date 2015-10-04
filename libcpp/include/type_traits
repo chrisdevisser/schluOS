@@ -28,6 +28,7 @@
 #include "detail/type_traits/is_arithmetic.hh"
 #include "detail/type_traits/is_fundamental.hh"
 #include "detail/type_traits/is_member_pointer.hh"
+#include "detail/type_traits/is_object.hh"
 #include "detail/type_traits/is_reference.hh"
 
 ///=> Type properties (unimplemented)
