@@ -8,7 +8,7 @@ namespace std {
 
 namespace __detail {
     //This is so the casts aren't applied to non-arithmetic types.
-    template<typename _T, bool _IsArithmetic>
+    template<typename _T, bool = is_arithmetic_v<_T>>
     struct __is_signed_helper : false_type {};
 
     template<typename _T>
@@ -18,7 +18,7 @@ namespace __detail {
 ///is_signed - [meta.unary.prop]
 ///True iff is_arithmetic_v<_T> is true and _T(-1) < _T(0).
 template<typename _T>
-struct is_signed : __detail::__is_signed_helper<_T, is_arithmetic_v<_T>> {};
+struct is_signed : __detail::__is_signed_helper<_T> {};
 
 template<typename _T>
 constexpr auto is_signed_v{is_signed<_T>::value};
