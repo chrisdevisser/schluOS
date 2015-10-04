@@ -33,7 +33,8 @@
 #include "detail/type_traits/is_reference.hh"
 #include "detail/type_traits/is_scalar.hh"
 
-///=> Type properties (unimplemented)
+///=> Type properties
+#include "detail/type_traits/is_const.hh"
 
 ///Type property queries (unimplemented)
 
