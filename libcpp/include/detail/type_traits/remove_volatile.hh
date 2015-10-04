@@ -2,7 +2,7 @@
 
 namespace std {
 
-///remove_const - [meta.trans.cv]
+///remove_volatile - [meta.trans.cv]
 ///_T with any top-level volatile-qualifier removed.
 template<typename _T>
 struct remove_volatile {
