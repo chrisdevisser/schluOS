@@ -18,6 +18,7 @@
 #include "detail/type_traits/is_null_pointer.hh"
 #include "detail/type_traits/is_pointer.hh"
 #include "detail/type_traits/is_rvalue_reference.hh"
+#include "detail/type_traits/is_union.hh"
 #include "detail/type_traits/is_void.hh"
 
 ///Composite type traits (unimplemented)
