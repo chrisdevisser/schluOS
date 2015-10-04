@@ -21,4 +21,7 @@ namespace __detail {
 template<typename _T>
 struct add_rvalue_reference : __detail::__add_rvalue_reference_helper<_T> {};
 
+template<typename _T>
+using add_rvalue_reference_t = typename add_rvalue_reference<_T>::type;
+
 }
