@@ -4,6 +4,7 @@
 
 namespace std {
 
+//Always void. Used in the detection idiom.
 template<typename...>
 using void_t = void;
 
