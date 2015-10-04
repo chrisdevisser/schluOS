@@ -8,15 +8,16 @@
 
 ///Unary type traits
 #include "detail/type_traits/is_array.hh"
+#include "detail/type_traits/is_enum.hh"
 #include "detail/type_traits/is_floating_point.hh"
 #include "detail/type_traits/is_function.hh"
 #include "detail/type_traits/is_integral.hh"
 #include "detail/type_traits/is_lvalue_reference.hh"
 #include "detail/type_traits/is_member_function_pointer.hh"
 #include "detail/type_traits/is_member_object_pointer.hh"
-#include "detail/type_traits/is_rvalue_reference.hh"
 #include "detail/type_traits/is_null_pointer.hh"
 #include "detail/type_traits/is_pointer.hh"
+#include "detail/type_traits/is_rvalue_reference.hh"
 #include "detail/type_traits/is_void.hh"
 
 ///Composite type traits (unimplemented)
