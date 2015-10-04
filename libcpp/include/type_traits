@@ -64,7 +64,8 @@
 #include "detail/type_traits/remove_cv.hh"
 #include "detail/type_traits/remove_volatile.hh"
 
-///=> Reference modifications (unimplemented)
+///=> Reference modifications
+#include "detail/type_traits/add_rvalue_reference.hh"
 
 ///=> Sign modifications (unimplemented)
 
