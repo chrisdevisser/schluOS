@@ -24,7 +24,8 @@
 #include "detail/type_traits/is_union.hh"
 #include "detail/type_traits/is_void.hh"
 
-///=> Composite type traits (unimplemented)
+///=> Composite type traits
+#include "detail/type_traits/is_arithmetic.hh"
 #include "detail/type_traits/is_member_pointer.hh"
 #include "detail/type_traits/is_reference.hh"
 
