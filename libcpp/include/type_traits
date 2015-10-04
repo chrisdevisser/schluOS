@@ -1,5 +1,9 @@
 #pragma once
 
+#define __cpp_lib_transformation_trait_aliases 201304
+#define __cpp_lib_experimental_type_trait_variable_templates 201402
+#define __cpp_lib_type_trait_variable_templates 201402
+
 ///Helper classes
 #include "detail/type_traits/bool_constant.hh"
 #include "detail/type_traits/false_type.hh"

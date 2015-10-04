@@ -1,5 +1,7 @@
 #pragma once
 
+#define __cpp_lib_integral_constant_callable 201304
+
 namespace std {
 
 ///Helper classes - [meta.help]

@@ -2,6 +2,8 @@
 
 #include "bool_constant.hh"
 
+#define __cpp_lib_is_final 201402
+
 namespace std {
 
 ///is_final - [meta.unary.prop]

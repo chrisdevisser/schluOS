@@ -5,6 +5,8 @@
 #include "is_same.hh"
 #include "remove_cv.hh"
 
+#define __cpp_lib_is_null_pointer 201309
+
 namespace std {
 
 ///is_null_pointer - [meta.unary.cat]
