@@ -8,7 +8,7 @@
 namespace std {
 
 ///is_null_pointer - [meta.unary.cat]
-///True iff remove_cv<_T> is nullptr_t.
+///True iff remove_cv_t<_T> is nullptr_t.
 template<typename _T>
 struct is_null_pointer : is_same<remove_cv_t<_T>, nullptr_t> {};
 

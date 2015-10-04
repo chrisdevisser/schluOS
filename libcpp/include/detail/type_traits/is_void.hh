@@ -6,7 +6,7 @@
 namespace std {
 
 ///is_void - [meta.unary.cat]
-///True iff remove_cv<_T> is void.
+///True iff remove_cv_t<_T> is void.
 template<typename _T>
 struct is_void : is_same<remove_cv_t<_T>, void> {};
 
