@@ -11,6 +11,6 @@ template<typename _T>
 struct is_void : is_same<remove_cv_t<_T>, void> {};
 
 template<typename _T>
-constexpr auto is_void_v{is_void<_T>{}};
+constexpr auto is_void_v{is_void<_T>::value};
 
 }

@@ -13,6 +13,6 @@ template<typename _T>
 struct is_null_pointer : is_same<remove_cv_t<_T>, nullptr_t> {};
 
 template<typename _T>
-constexpr auto is_null_pointer_v{is_null_pointer<_T>{}};
+constexpr auto is_null_pointer_v{is_null_pointer<_T>::value};
 
 }

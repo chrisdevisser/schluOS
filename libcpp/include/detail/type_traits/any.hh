@@ -18,7 +18,7 @@ namespace __detail {
     struct __any : std::bool_constant<__any_helper<_Bs...>()> {};
 
     template<bool... _Bs>
-    constexpr auto __any_v{__any<_Bs...>{}};
+    constexpr auto __any_v{__any<_Bs...>::value};
 }
 
 }
