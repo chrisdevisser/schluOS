@@ -35,6 +35,8 @@
 
 ///=> Type properties
 #include "detail/type_traits/is_const.hh"
+#include "detail/type_traits/is_trivial.hh"
+#include "detail/type_traits/is_volatile.hh"
 
 ///Type property queries (unimplemented)
 
