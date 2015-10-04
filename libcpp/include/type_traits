@@ -75,5 +75,6 @@
 ///=> Other transformations
 #include "detail/type_traits/detected_or.hh"
 #include "detail/type_traits/is_detected.hh"
+#include "detail/type_traits/is_detected_exact.hh"
 #include "detail/type_traits/nonesuch.hh"
 #include "detail/type_traits/void_t.hh"
