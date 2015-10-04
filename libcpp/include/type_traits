@@ -34,6 +34,7 @@
 #include "detail/type_traits/is_scalar.hh"
 
 ///=> Type properties
+#include "detail/type_traits/is_abstract.hh"
 #include "detail/type_traits/is_const.hh"
 #include "detail/type_traits/is_empty.hh"
 #include "detail/type_traits/is_literal_type.hh"
