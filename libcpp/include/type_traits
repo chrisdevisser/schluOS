@@ -26,6 +26,7 @@
 
 ///=> Composite type traits
 #include "detail/type_traits/is_arithmetic.hh"
+#include "detail/type_traits/is_compound.hh"
 #include "detail/type_traits/is_fundamental.hh"
 #include "detail/type_traits/is_member_pointer.hh"
 #include "detail/type_traits/is_object.hh"
