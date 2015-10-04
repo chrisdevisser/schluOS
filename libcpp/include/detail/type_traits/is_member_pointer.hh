@@ -15,7 +15,7 @@ namespace __detail {
 }
 
 ///is_member_pointer - [meta.unary.comp]
-///True iff T is a pointer to non-static data member or non-static member function.
+///True iff remove_cv_t<_T> is a pointer to non-static data member or non-static member function.
 template<typename _T>
 struct is_member_pointer : __detail::__is_member_pointer_helper<remove_cv_t<_T>> {};
 
