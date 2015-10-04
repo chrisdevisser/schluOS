@@ -1,7 +1,7 @@
 #include <type_traits>
 
-struct Base {};
-struct Derived : Base {};
+struct base {};
+struct derived : base {};
 
 static_assert(std::is_same_v<int, int>);
 static_assert(std::is_same_v<const int, const int>);
@@ -14,4 +14,4 @@ static_assert(not std::is_same_v<int, volatile int>);
 static_assert(not std::is_same_v<int, const volatile int>);
 
 static_assert(not std::is_same_v<int, double>);
-static_assert(not std::is_same_v<Base, Derived>);
+static_assert(not std::is_same_v<base, derived>);
