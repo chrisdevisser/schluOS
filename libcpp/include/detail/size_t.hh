@@ -6,6 +6,6 @@ namespace std {
 
 ///size_t - [support.types]/6
 ///Unsigned integer type large enough to contain the size in bytes of any object.
-using size_t = unsigned long;
+using size_t = decltype(sizeof 0);
 
 }
