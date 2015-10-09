@@ -9,7 +9,7 @@ namespace std {
 template<typename _T, _T _Value>
 struct integral_constant {
     using value_type = _T;
-    using type = integral_constant<_T, _Value>;
+    using type = integral_constant;
 
     static constexpr _T value = _Value;
 
