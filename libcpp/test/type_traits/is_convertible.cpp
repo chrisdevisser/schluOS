@@ -36,6 +36,8 @@ protected:
     operator int() const;
 };
 
+//TODO: SFINAE
+
 static_assert(std::is_convertible_v<int, int>);
 static_assert(std::is_convertible_v<int, double>);
 static_assert(std::is_convertible_v<int, char>);
@@ -57,7 +59,7 @@ static_assert(std::is_convertible_v<void(), void(*)()>);
 static_assert(std::is_convertible_v<void(), void(&)()>);
 static_assert(std::is_convertible_v<void(&)(), void(*)()>);
 static_assert(std::is_convertible_v<int[], int*>);
-static_assert(std::is_convertible_v<int[], int*>);
+static_assert(std::is_convertible_v<int[5], int*>);
 
 static_assert(std::is_convertible_v<derived, base>);
 static_assert(std::is_convertible_v<derived*, base*>);
@@ -71,6 +73,7 @@ static_assert(not std::is_convertible_v<int, void>);
 static_assert(not std::is_convertible_v<void, int>);
 static_assert(not std::is_convertible_v<void, void()>);
 static_assert(not std::is_convertible_v<int*, int[]>);
+static_assert(not std::is_convertible_v<int[5], int[5]>);
 static_assert(not std::is_convertible_v<int**, const int**>);
 static_assert(not std::is_convertible_v<void(structure::*)(), void(structure::*)() const>);
 static_assert(not std::is_convertible_v<scoped_enumeration, int>);
