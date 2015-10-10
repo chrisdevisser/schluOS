@@ -2,9 +2,9 @@
 
 #include <detail/declval.hh>
 
-#include "bool_constant.hh"
 #include "detail/is_array_of_known_bound.hh"
 #include "detail/is_array_of_unknown_bound.hh"
+#include "bool_constant.hh"
 #include "is_detected.hh"
 #include "remove_all_extents.hh"
 
