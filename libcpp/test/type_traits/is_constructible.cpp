@@ -6,6 +6,10 @@ struct not_constructible {
     not_constructible() = delete;
 };
 
+struct not_destructible {
+    ~not_destructible() = delete;
+};
+
 struct implicitly_constructible_from_int {
     implicitly_constructible_from_int(int) {}
 };
@@ -50,6 +54,7 @@ static_assert(std::is_constructible_v<volatile default_constructible>);
 static_assert(std::is_constructible_v<const volatile default_constructible>);
 
 static_assert(not std::is_constructible_v<not_constructible>);
+static_assert(not std::is_constructible_v<not_destructible>);
 static_assert(not std::is_constructible_v<void>);
 static_assert(not std::is_constructible_v<void, int>);
 static_assert(not std::is_constructible_v<void, void>);
