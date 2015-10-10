@@ -106,7 +106,7 @@ namespace std {
 ///= (1 - 2^-53) * 2^1024
 #define DBL_MAX 1.79769'31348'62315'7e308
 ///= (1 - 2^-64) * 2^16384
-#define LDBL_MAX 1.18973'14953'57231'765e4932l
+#define LDBL_MAX 1.18973'14953'57231'765e4932L
 
 ///*_EPSILON - C99 5.2.4.2.2/11
 ///The difference between 1 and the least value greater than 1
@@ -118,7 +118,7 @@ namespace std {
 ///= 2^-52
 #define DBL_EPSILON 2.22044'60492'50313e-16
 ///= 2^-63
-#define LDBL_EPSILON 1.08420'21724'85504'434e-19l
+#define LDBL_EPSILON 1.08420'21724'85504'434e-19L
 
 ///*_MIN - C99 5.2.4.2.2/11
 ///Minimum normalized positive floating-point number.
@@ -129,4 +129,4 @@ namespace std {
 ///= 2^-1022
 #define DBL_MIN 2.22507'38585'072014e-308
 ///= 2^-16382
-#define LDBL_MIN 3.36210'31431'12093'5063e-4932l
+#define LDBL_MIN 3.36210'31431'12093'5063e-4932L
