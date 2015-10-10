@@ -2,8 +2,8 @@
 
 #include <detail/size_t.hh>
 
-#include "false_type.hh"
-#include "true_type.hh"
+#include "../false_type.hh"
+#include "../true_type.hh"
 
 namespace std {
 

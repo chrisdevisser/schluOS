@@ -1,7 +1,7 @@
 #pragma once
 
+#include "detail/not.hh"
 #include "is_fundamental.hh"
-#include "not.hh"
 
 namespace std {
 

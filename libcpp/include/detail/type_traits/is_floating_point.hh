@@ -1,6 +1,6 @@
 #pragma once
 
-#include "is_contained_in.hh"
+#include "detail/is_contained_in.hh"
 #include "remove_cv.hh"
 
 namespace std {

@@ -1,4 +1,4 @@
-#include <detail/type_traits/all.hh>
+#include <detail/type_traits/detail/all.hh>
 
 using namespace std::__detail;
 

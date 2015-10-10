@@ -1,8 +1,8 @@
 #pragma once
 
-#include "any.hh"
-#include "is_array_of_known_bound.hh"
-#include "is_array_of_unknown_bound.hh"
+#include "detail/any.hh"
+#include "detail/is_array_of_known_bound.hh"
+#include "detail/is_array_of_unknown_bound.hh"
 
 namespace std {
 

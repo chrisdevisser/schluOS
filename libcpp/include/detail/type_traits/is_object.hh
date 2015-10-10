@@ -1,6 +1,6 @@
 #pragma once
 
-#include "all.hh"
+#include "detail/all.hh"
 #include "is_function.hh"
 #include "is_reference.hh"
 #include "is_void.hh"

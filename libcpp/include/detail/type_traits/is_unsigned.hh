@@ -1,6 +1,6 @@
 #pragma once
 
-#include "all.hh"
+#include "detail/all.hh"
 #include "is_arithmetic.hh"
 #include "is_signed.hh"
 

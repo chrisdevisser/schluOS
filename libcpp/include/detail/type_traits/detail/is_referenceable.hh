@@ -1,9 +1,9 @@
 #pragma once
 
+#include "../is_object.hh"
+#include "../is_reference.hh"
+#include "../true_type.hh"
 #include "any.hh"
-#include "is_object.hh"
-#include "is_reference.hh"
-#include "true_type.hh"
 
 namespace std {
 
