@@ -56,6 +56,8 @@ static_assert(not std::is_constructible_v<private_default_constructible>);
 static_assert(not std::is_constructible_v<not_constructible[5]>);
 static_assert(not std::is_constructible_v<int[5], int>);
 static_assert(not std::is_constructible_v<int[5], int[5]>);
+static_assert(not std::is_constructible_v<void()>);
+static_assert(not std::is_constructible_v<void(), void()>);
 
 struct protected_test : protected_default_constructible {
     static_assert(not std::is_constructible_v<protected_default_constructible>);
