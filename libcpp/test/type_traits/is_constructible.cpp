@@ -14,6 +14,10 @@ struct explicitly_constructible_from_int {
     explicit explicitly_constructible_from_int(int) {}
 };
 
+struct constructible_from_two_ints {
+    constructible_from_two_ints(int, int) {}
+};
+
 struct explicitly_convertible_to_int {
     explicit operator int() const {return 0;}
 };
@@ -58,6 +62,9 @@ static_assert(not std::is_constructible_v<int[5], int>);
 static_assert(not std::is_constructible_v<int[5], int[5]>);
 static_assert(not std::is_constructible_v<void()>);
 static_assert(not std::is_constructible_v<void(), void()>);
+static_assert(not std::is_constructible_v<implicitly_constructible_from_int, void, int>);
+static_assert(not std::is_constructible_v<implicitly_constructible_from_int, int, void>);
+static_assert(not std::is_constructible_v<constructible_from_two_ints, int, void, int>);
 
 struct protected_test : protected_default_constructible {
     static_assert(not std::is_constructible_v<protected_default_constructible>);
