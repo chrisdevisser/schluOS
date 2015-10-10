@@ -40,6 +40,7 @@
 ///=> Type properties
 #include "detail/type_traits/is_abstract.hh"
 #include "detail/type_traits/is_const.hh"
+#include "detail/type_traits/is_constructible.hh"
 #include "detail/type_traits/is_empty.hh"
 #include "detail/type_traits/is_final.hh"
 #include "detail/type_traits/is_literal_type.hh"
