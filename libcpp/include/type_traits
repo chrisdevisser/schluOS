@@ -102,7 +102,8 @@
 
 ///=> Sign modifications (unimplemented)
 
-///=> Array modifications (unimplemented)
+///=> Array modifications
+#include "detail/type_traits/remove_extent.hh"
 #include "detail/type_traits/remove_all_extents.hh"
 
 ///=> Pointer modifications (unimplemented)
