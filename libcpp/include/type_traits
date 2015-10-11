@@ -56,6 +56,8 @@
 #include "detail/type_traits/is_nothrow_copy_assignable.hh"
 #include "detail/type_traits/is_nothrow_copy_constructible.hh"
 #include "detail/type_traits/is_nothrow_default_constructible.hh"
+#include "detail/type_traits/is_nothrow_destructible.hh"
+#include "detail/type_traits/is_nothrow_move_assignable.hh"
 #include "detail/type_traits/is_nothrow_move_constructible.hh"
 #include "detail/type_traits/is_pod.hh"
 #include "detail/type_traits/is_polymorphic.hh"
