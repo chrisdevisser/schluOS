@@ -76,7 +76,8 @@
 #include "detail/type_traits/is_unsigned.hh"
 #include "detail/type_traits/is_volatile.hh"
 
-///Type property queries (unimplemented)
+///Type property queries
+#include "detail/type_traits/alignment_of.hh"
 
 ///Relationships between types
 #include "detail/type_traits/is_base_of.hh"
