@@ -1,6 +1,6 @@
 #pragma once
 
-#include <detail/declval.hh>
+#include <detail/utility/declval.hh>
 
 #include "false_type.hh"
 #include "is_array.hh"

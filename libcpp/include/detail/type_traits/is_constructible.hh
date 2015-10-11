@@ -1,6 +1,6 @@
 #pragma once
 
-#include <detail/declval.hh>
+#include <detail/utility/declval.hh>
 
 #include "detail/is_array_of_known_bound.hh"
 #include "detail/is_array_of_unknown_bound.hh"

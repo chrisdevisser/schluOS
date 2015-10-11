@@ -1,6 +1,6 @@
 #pragma once
 
-#include <detail/declval.hh>
+#include <detail/utility/declval.hh>
 
 #include "bool_constant.hh"
 #include "is_detected.hh"
