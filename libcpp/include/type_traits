@@ -51,6 +51,7 @@
 #include "detail/type_traits/is_literal_type.hh"
 #include "detail/type_traits/is_move_assignable.hh"
 #include "detail/type_traits/is_move_constructible.hh"
+#include "detail/type_traits/is_nothrow_assignable.hh"
 #include "detail/type_traits/is_nothrow_constructible.hh"
 #include "detail/type_traits/is_nothrow_copy_constructible.hh"
 #include "detail/type_traits/is_nothrow_default_constructible.hh"
