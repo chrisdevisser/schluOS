@@ -35,6 +35,13 @@ protected:
     protected_default_constructible() {}
 };
 
+struct base {};
+struct derived : base {};
+
+struct abstract {
+    virtual ~abstract() = 0;
+};
+
 //TODO: SFINAE
 
 static_assert(std::is_constructible_v<int>);
@@ -48,6 +55,9 @@ static_assert(std::is_constructible_v<int[5]>);
 static_assert(std::is_constructible_v<int&, int&>);
 static_assert(std::is_constructible_v<const int&, int>);
 static_assert(std::is_constructible_v<int&&, int>);
+static_assert(std::is_constructible_v<base, derived>);
+static_assert(std::is_constructible_v<base&, derived&>);
+static_assert(std::is_constructible_v<void(&&)(), void(&)()>);
 
 static_assert(std::is_constructible_v<const default_constructible>);
 static_assert(std::is_constructible_v<volatile default_constructible>);
@@ -55,6 +65,7 @@ static_assert(std::is_constructible_v<const volatile default_constructible>);
 
 static_assert(not std::is_constructible_v<not_constructible>);
 static_assert(not std::is_constructible_v<not_destructible>);
+static_assert(not std::is_constructible_v<abstract>);
 static_assert(not std::is_constructible_v<void>);
 static_assert(not std::is_constructible_v<void, int>);
 static_assert(not std::is_constructible_v<void, void>);
@@ -70,6 +81,20 @@ static_assert(not std::is_constructible_v<void(), void()>);
 static_assert(not std::is_constructible_v<implicitly_constructible_from_int, void, int>);
 static_assert(not std::is_constructible_v<implicitly_constructible_from_int, int, void>);
 static_assert(not std::is_constructible_v<constructible_from_two_ints, int, void, int>);
+static_assert(not std::is_constructible_v<derived, base>);
+static_assert(not std::is_constructible_v<derived, base&>);
+static_assert(not std::is_constructible_v<derived, base&&>);
+static_assert(not std::is_constructible_v<derived&, base>);
+static_assert(not std::is_constructible_v<derived&, base&>);
+static_assert(not std::is_constructible_v<derived&, base&&>);
+static_assert(not std::is_constructible_v<derived&&, base>);
+static_assert(not std::is_constructible_v<derived&&, base&>);
+static_assert(not std::is_constructible_v<derived&&, base&&>);
+static_assert(not std::is_constructible_v<const derived&, const base&>);
+static_assert(not std::is_constructible_v<derived&, const base&>);
+static_assert(not std::is_constructible_v<const derived&, base&>);
+static_assert(not std::is_constructible_v<int&, int&&>);
+static_assert(not std::is_constructible_v<int&&, int&>);
 
 struct protected_test : protected_default_constructible {
     static_assert(not std::is_constructible_v<protected_default_constructible>);
