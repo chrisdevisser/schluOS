@@ -78,6 +78,7 @@
 
 ///Type property queries
 #include "detail/type_traits/alignment_of.hh"
+#include "detail/type_traits/extent.hh"
 #include "detail/type_traits/rank.hh"
 
 ///Relationships between types
