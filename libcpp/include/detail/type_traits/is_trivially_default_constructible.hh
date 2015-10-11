@@ -5,7 +5,7 @@
 namespace std {
 
 ///is_trivially_default_constructible - [meta.unary.prop]
-///is_trivially_cosntructible_v<_Type>
+///True iff is_trivially_cosntructible_v<_Type> is true.
 template<typename _Type>
 struct is_trivially_default_constructible : is_trivially_constructible<_Type> {};
 
