@@ -1,6 +1,6 @@
 #pragma once
 
-#include "detail/all.hh"
+#include "bool_constant.hh"
 #include "is_destructible.hh"
 
 namespace std {
@@ -8,9 +8,9 @@ namespace std {
 ///is_trivially_destructible - [meta.unary.prop]
 ///True iff is_destructible_v<_T> is true and is trivial.
 template<typename _T>
-struct is_trivially_destructible : __detail::__all<
-    is_destructible_v<_T>,
-    __has_trivial_destructor(_T)
+struct is_trivially_destructible : bool_constant<
+    is_destructible_v<_T>
+    and __has_trivial_destructor(_T)
 > {};
 
 template<typename _T>
