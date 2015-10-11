@@ -57,6 +57,7 @@
 #include "detail/type_traits/is_standard_layout.hh"
 #include "detail/type_traits/is_trivial.hh"
 #include "detail/type_traits/is_trivially_copyable.hh"
+#include "detail/type_traits/is_trivially_constructible.hh"
 #include "detail/type_traits/is_unsigned.hh"
 #include "detail/type_traits/is_volatile.hh"
 
