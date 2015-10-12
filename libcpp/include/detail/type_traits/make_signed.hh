@@ -1,6 +1,5 @@
 #pragma once
 
-#include <detail/size_t.hh>
 #include <cstdint>
 
 #include "detail/first_of_same_size.hh"
