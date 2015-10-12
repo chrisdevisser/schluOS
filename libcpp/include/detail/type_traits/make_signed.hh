@@ -3,8 +3,8 @@
 #include <detail/size_t.hh>
 #include <cstdint>
 
-#include "detail/transfer_cv.hh"
 #include "detail/first_of_same_size.hh"
+#include "detail/transfer_cv.hh"
 #include "conditional.hh"
 #include "is_enum.hh"
 #include "is_same.hh"
