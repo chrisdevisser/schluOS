@@ -2,7 +2,7 @@
 
 #include <concepts>
 
-#include "detail/size_t.hh"
+#include <detail/size_t.hh>
 
 namespace std {
 
