@@ -21,6 +21,9 @@
 ///All integer values except FLT_ROUNDS can be used in #if.
 ///All floating values are constant expressions.
 
+//The calculations for the default values are shown.
+//We use the compiler-provided values in case of flags etc.
+
 ///FLT_ROUNDS - C99 5.2.4.2.2/7
 ///See <limits> for the enum of values.
 ///Note 18: This should reflect calls to fesetround.
@@ -33,22 +36,22 @@ namespace std {
 #define FLT_ROUNDS std::fegetround()
 
 ///See <limits> for the enum of values.
-#define FLT_EVAL_METHOD 2 //evaluate operations and constants to the range and precision of long double
+#define FLT_EVAL_METHOD __FLT_EVAL_METHOD__ //default: 2
 
 ///b
-#define FLT_RADIX 2
+#define FLT_RADIX __FLT_RADIX__ //default: 2
 
 ///p
-#define FLT_MANT_DIG 24
-#define DBL_MANT_DIG 53
-#define LDBL_MANT_DIG 64
+#define FLT_MANT_DIG __FLT_MANT_DIG__ //default: 24
+#define DBL_MANT_DIG __DBL_MANT_DIG__ //default: 53
+#define LDBL_MANT_DIG __LDBL_MANT_DIG__ //default: 64
 
 ///Number of decimal digits n such that any floating-point number
 ///with p_max base-b digits can be rounded to a floating-point number
 ///with n decimal digits and back again without change to the value.
 ///= ceil(1 + p_max*log10(b))
 ///= ceil(1 + 64*0.3) note log10(2) is about 0.3
-#define DECIMAL_DIG 21
+#define DECIMAL_DIG __DECIMAL_DIG__ //default: 21
 
 ///*_DIG - C99 5.2.4.2.2/9
 ///Number of decimal digits q such that any floating-point number
@@ -57,56 +60,56 @@ namespace std {
 ///= floor((p-1)*log10(b))
 
 ///= floor(23*0.3)
-#define FLT_DIG 6
+#define FLT_DIG __FLT_DIG__ //default: 6
 ///= floor(52*0.3)
-#define DBL_DIG 15
+#define DBL_DIG __DBL_DIG__ //default: 15
 ///= floor(63*0.3)
-#define LDBL_DIG 18
+#define LDBL_DIG __LDBL_DIG__ //default: 18
 
 
 ///Minimum negative integer e_min such that b^(e_min-1) is normalized.
-#define FLT_MIN_EXP -125
-#define DBL_MIN_EXP -1021
-#define LDBL_MIN_EXP -16381
+#define FLT_MIN_EXP __FLT_MIN_EXP__ //default: -125
+#define DBL_MIN_EXP __DBL_MIN_EXP__ //default: -1021
+#define LDBL_MIN_EXP __LDBL_MIN_EXP__ //default: -16381
 
 ///*_MIN_10_EXP - C99 5.2.4.2.2/9
 ///Minimum negative integer y such that 10^y is in the range of normalized floating-point numbers
 ///= ceil(log10(b^(e_min-1)))
 
 ///= ceil(-126*0.3)
-#define FLT_MIN_10_EXP -37
+#define FLT_MIN_10_EXP __FLT_MIN_10_EXP__ //default: -37
 ///~= ceil(-1022*0.3) (log10(2) > 0.3)
-#define DBL_MIN_10_EXP -307
+#define DBL_MIN_10_EXP __DBL_MIN_10_EXP__ //default: -307
 ///~= ceil(-16382*0.3)
-#define LDBL_MIN_10_EXP -4931
+#define LDBL_MIN_10_EXP __LDBL_MIN_10_EXP__ //default: -4931
 
 ///*_MAX_EXP - C99 5.2.4.2.2/9
 ///Maximum integer e_max such that b^(e_max-1) is representable and finite.
-#define FLT_MAX_EXP 128
-#define DBL_MAX_EXP 1024
-#define LDBL_MAX_EXP 16384
+#define FLT_MAX_EXP __FLT_MAX_EXP__ //default: 128
+#define DBL_MAX_EXP __DBL_MAX_EXP__ //default: 1024
+#define LDBL_MAX_EXP __LDBL_MAX_EXP__ //default: 16384
 
 ///*_MAX_10_EXP - C99 5.2.4.2.2/9
 ///Maximum integer y such that 10^y is in the range of representable finite floating-point numbers.
 ///= floor(log10((1-b^-p) * b^e_max))
 
 ///= floor(log10((1 - 2^-24) * 2^128))
-#define FLT_MAX_10_EXP 38
+#define FLT_MAX_10_EXP __FLT_MAX_10_EXP__ //default: 38
 ///= floor(log10((1 - 2^-53) * 2^1024))
-#define DBL_MAX_10_EXP 308
+#define DBL_MAX_10_EXP __DBL_MAX_10_EXP__ //default: 308
 ///= floor(log10((1 - 2^-64) * 2^16384))
-#define LDBL_MAX_10_EXP 4932
+#define LDBL_MAX_10_EXP __LDBL_MAX_10_EXP__ //default: 4932
 
 ///*_MAX - C99 5.2.4.2.2/10
 ///Maximum representable finite floating-point number.
 ///= (1-b^-p) * b^e_max
 
 ///= (1 - 2^-24) * 2^128
-#define FLT_MAX 3.40282'35e38f
+#define FLT_MAX __FLT_MAX__ //default: 3.40282'35e38f
 ///= (1 - 2^-53) * 2^1024
-#define DBL_MAX 1.79769'31348'62315'7e308
+#define DBL_MAX __DBL_MAX__ //default: 1.79769'31348'62315'7e308
 ///= (1 - 2^-64) * 2^16384
-#define LDBL_MAX 1.18973'14953'57231'765e4932L
+#define LDBL_MAX __LDBL_MAX__ //default: 1.18973'14953'57231'765e4932L
 
 ///*_EPSILON - C99 5.2.4.2.2/11
 ///The difference between 1 and the least value greater than 1
@@ -114,19 +117,19 @@ namespace std {
 ///= b^(1-p)
 
 ///= 2^-23
-#define FLT_EPSILON 1.19209'29e-7f
+#define FLT_EPSILON __FLT_EPSILON__ //default: 1.19209'29e-7f
 ///= 2^-52
-#define DBL_EPSILON 2.22044'60492'50313e-16
+#define DBL_EPSILON __DBL_EPSILON__ //default: 2.22044'60492'50313e-16
 ///= 2^-63
-#define LDBL_EPSILON 1.08420'21724'85504'434e-19L
+#define LDBL_EPSILON __LDBL_EPSILON__ //default: 1.08420'21724'85504'434e-19L
 
 ///*_MIN - C99 5.2.4.2.2/11
 ///Minimum normalized positive floating-point number.
 ///= b^(e_min-1)
 
 ///= 2^-126
-#define FLT_MIN 1.17549'44e-38f
+#define FLT_MIN __FLT_MIN__ //default: 1.17549'44e-38f
 ///= 2^-1022
-#define DBL_MIN 2.22507'38585'072014e-308
+#define DBL_MIN __DBL_MIN__ //default: 2.22507'38585'072014e-308
 ///= 2^-16382
-#define LDBL_MIN 3.36210'31431'12093'5063e-4932L
+#define LDBL_MIN __LDBL_MIN__ //default: 3.36210'31431'12093'5063e-4932L
