@@ -6,4 +6,4 @@
 //N3351 - A Concept Design for the STL and the standard "imaginary" concepts.
 
 #include "detail/concepts/equality_comparable.hh"
-#include "detail/concepts/less_than_comparable.hh"
+#include "detail/concepts/totally_ordered.hh"
