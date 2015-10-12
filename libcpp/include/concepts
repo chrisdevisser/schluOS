@@ -3,5 +3,7 @@
 #include "detail/concepts/type_traits.hh"
 
 //The following are (maybe with a couple exceptions) based on
-//N3351 - A Concept Design for the STL.
+//N3351 - A Concept Design for the STL and the standard "imaginary" concepts.
+
 #include "detail/concepts/equality_comparable.hh"
+#include "detail/concepts/less_than_comparable.hh"
