@@ -11,6 +11,7 @@
 #include "is_function.hh"
 #include "is_lvalue_reference.hh"
 #include "is_rvalue_reference.hh"
+#include "is_same.hh"
 #include "remove_all_extents.hh"
 #include "remove_cv.hh"
 #include "remove_reference.hh"
@@ -43,7 +44,12 @@ namespace __detail {
     template<typename _Type, typename... _Args>
     constexpr auto __is_constructing_derived_from_base{
         sizeof...(_Args) == 1
-        and __detail::__all_v<
+        and not __detail::__all_v<
+            is_same_v<
+                remove_cv_t<remove_reference_t<_Type>>,
+                remove_cv_t<remove_reference_t<_Args>>
+            >...
+        > and __detail::__all_v<
             is_base_of_v<
                 remove_cv_t<remove_reference_t<_Args>>,
                 remove_cv_t<remove_reference_t<_Type>>

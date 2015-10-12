@@ -1,6 +1,8 @@
 #include <type_traits>
 
 struct default_constructible {};
+struct copy_constructible {};
+struct move_constructible {};
 
 struct not_constructible {
     not_constructible() = delete;
@@ -47,6 +49,8 @@ struct abstract {
 static_assert(std::is_constructible_v<int>);
 static_assert(std::is_constructible_v<int, int>);
 static_assert(std::is_constructible_v<default_constructible>);
+static_assert(std::is_constructible_v<copy_constructible, const copy_constructible&>);
+static_assert(std::is_constructible_v<move_constructible, move_constructible&&>);
 static_assert(std::is_constructible_v<implicitly_constructible_from_int, int>);
 static_assert(std::is_constructible_v<explicitly_constructible_from_int, int>);
 static_assert(std::is_constructible_v<implicitly_constructible_from_int, double>);
