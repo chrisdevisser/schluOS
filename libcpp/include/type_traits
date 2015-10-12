@@ -101,7 +101,8 @@
 #include "detail/type_traits/add_rvalue_reference.hh"
 #include "detail/type_traits/remove_reference.hh"
 
-///=> Sign modifications (unimplemented)
+///=> Sign modifications
+#include "detail/type_traits/make_signed.hh"
 
 ///=> Array modifications
 #include "detail/type_traits/remove_extent.hh"
