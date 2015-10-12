@@ -103,6 +103,7 @@
 
 ///=> Sign modifications
 #include "detail/type_traits/make_signed.hh"
+#include "detail/type_traits/make_unsigned.hh"
 
 ///=> Array modifications
 #include "detail/type_traits/remove_extent.hh"
