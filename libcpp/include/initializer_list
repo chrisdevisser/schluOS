@@ -1,12 +1,14 @@
 #pragma once
 
+#include <concepts>
+
 #include "detail/size_t.hh"
 
 namespace std {
 
 ///initilializer_list - [support.initlist]
 ///Provides access to an array of const _T.
-template<typename _T>
+template<Object _T>
 struct initializer_list {
     using value_type = _T;
     using const_reference = const _T&;
@@ -47,13 +49,13 @@ private:
 };
 
 ///Returns: __list.begin()
-template<typename _T>
+template<Object _T>
 constexpr auto begin(initializer_list<_T> __list) noexcept {
     return __list.begin();
 }
 
 ///Returns: __list.end()
-template<typename _T>
+template<Object _T>
 constexpr auto end(initializer_list<_T> __list) noexcept {
     return __list.end();
 }
