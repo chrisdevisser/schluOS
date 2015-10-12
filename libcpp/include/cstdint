@@ -1,0 +1,215 @@
+#pragma once
+
+//Use GCC's provided PP definitions. Flags can change things.
+
+namespace std {
+
+///intN_t - C99 7.18.1.1/1
+///A signed integer type with width N, no padding bits,
+///and a two's complement representation.
+using int8_t = __INT8_TYPE__;
+using int16_t = __INT16_TYPE__;
+using int32_t = __INT32_TYPE__;
+using int64_t = __INT64_TYPE__;
+
+///uintN_t - C99 7.18.1.1/2
+///An unsigned integer type with width N.
+using uint8_t = __UINT8_TYPE__;
+using uint16_t = __UINT16_TYPE__;
+using uint32_t = __UINT32_TYPE__;
+using uint64_t = __UINT64_TYPE__;
+
+///int_leastN_t - C99 7.18.1.2/1
+///A signed integer type with a width of at least N,
+///such that no signed integer type with lesser size has
+///at least the specified width.
+using int_least8_t = __INT_LEAST8_TYPE__;
+using int_least16_t = __INT_LEAST16_TYPE__;
+using int_least32_t = __INT_LEAST32_TYPE__;
+using int_least64_t = __INT_LEAST64_TYPE__;
+
+///uint_leastN_t - C99 7.18.1.2/2
+///An unsigned integer type with a width of at least N,
+///such that no unsigned integer type with lesser size has
+///at least the specified width.
+using uint_least8_t = __UINT_LEAST8_TYPE__;
+using uint_least16_t = __UINT_LEAST16_TYPE__;
+using uint_least32_t = __UINT_LEAST32_TYPE__;
+using uint_least64_t = __UINT_LEAST64_TYPE__;
+
+///int_fastN_t - C99 7.18.1.3/2
+///The fastest signed integer type with a width of at least N.
+using int_fast8_t = __INT_FAST8_TYPE__;
+using int_fast16_t = __INT_FAST16_TYPE__;
+using int_fast32_t = __INT_FAST32_TYPE__;
+using int_fast64_t = __INT_FAST64_TYPE__;
+
+///uint_fastN_t - C99 7.18.1.3/2
+///The fastest unsigned integer type with a width of at least N.
+using uint_fast8_t = __UINT_FAST8_TYPE__;
+using uint_fast16_t = __UINT_FAST16_TYPE__;
+using uint_fast32_t = __UINT_FAST32_TYPE__;
+using uint_fast64_t = __UINT_FAST64_TYPE__;
+
+///intptr_t - C99 7.18.1.4/1
+///A signed integer type with the property that any valid
+///pointer to void can be converted to this type, then
+///converted back to pointer to void, and the result
+///will compare equal to the original pointer.
+using intptr_t = __INTPTR_TYPE__;
+
+///uintptr_t - C99 7.18.1.4/1
+///An unsigned integer type with the property that any valid
+///pointer to void can be converted to this type, then
+///converted back to pointer to void, and the result
+///will compare equal to the original pointer.
+using uintptr_t = __UINTPTR_TYPE__;
+
+///intmax_t - C99 7.18.1.5/1
+///A signed integer type capable of representing any
+///value of any signed integer type.
+using intmax_t = __INTMAX_TYPE__;
+
+///uintmax_t - C99 7.18.1.5/1
+///An unsigned integer type capable of representing any
+///value of any unsigned integer type.
+using uintmax_t = __UINTMAX_TYPE__;
+
+}
+
+///INTN_MIN - C99 7.18.2.1/1
+///Minimum values of exact-width signed integer types (exactly -(2^(N-1)))
+#define INT8_MIN (-INT8_MAX - 1)
+#define INT16_MIN (-INT16_MAX - 1)
+#define INT32_MIN (-INT32_MAX - 1)
+#define INT64_MIN (-INT64_MAX - 1)
+
+///INTN_MAX - C99 7.18.2.1/1
+///Maximum values of exact-width signed integer types (exactly 2^(N-1) - 1)
+#define INT8_MAX __INT8_MAX__
+#define INT16_MAX __INT16_MAX__
+#define INT32_MAX __INT32_MAX__
+#define INT64_MAX __INT64_MAX__
+
+///UINTN_MAX - C99 7.18.2.1/1
+///Maximum values of exact-width unsigned integer types (exactly 2^N - 1)
+#define UINT8_MAX __UINT8_MAX__
+#define UINT16_MAX __UINT16_MAX__
+#define UINT32_MAX __UINT32_MAX__
+#define UINT64_MAX __UINT64_MAX__
+
+///INT_LEASTN_MIN - C99 7.18.2.2/1
+///Minimum values of minimum-width signed integer types
+#define INT_LEAST8_MIN (-INT_LEAST8_MAX - 1)
+#define INT_LEAST16_MIN (-INT_LEAST16_MAX - 1)
+#define INT_LEAST32_MIN (-INT_LEAST32_MAX - 1)
+#define INT_LEAST64_MIN (-INT_LEAST64_MAX - 1)
+
+///INT_LEASTN_MAX - C99 7.18.2.2/1
+///Maximum values of minimum-width signed integer types
+#define INT_LEAST8_MAX __INT_LEAST8_MAX__
+#define INT_LEAST16_MAX __INT_LEAST16_MAX__
+#define INT_LEAST32_MAX __INT_LEAST32_MAX__
+#define INT_LEAST64_MAX __INT_LEAST64_MAX__
+
+///UINT_LEASTN_MAX - C99 7.18.2.2/1
+///Maximum values of minimum-width unsigned integer types
+#define UINT_LEAST8_MAX __UINT_LEAST8_MAX__
+#define UINT_LEAST16_MAX __UINT_LEAST16_MAX__
+#define UINT_LEAST32_MAX __UINT_LEAST32_MAX__
+#define UINT_LEAST64_MAX __UINT_LEAST64_MAX__
+
+///INT_FASTN_MIN - C99 7.18.2.3/1
+///Minimum values of fastest minimum-width signed integer types
+#define INT_FAST8_MIN (-INT_FAST8_MAX - 1)
+#define INT_FAST16_MIN (-INT_FAST16_MAX - 1)
+#define INT_FAST32_MIN (-INT_FAST32_MAX - 1)
+#define INT_FAST64_MIN (-INT_FAST64_MAX - 1)
+
+///INT_FASTN_MAX - C99 7.18.2.3/1
+///Maximum values of fastest minimum-width signed integer types
+#define INT_FAST8_MAX __INT_FAST8_MAX__
+#define INT_FAST16_MAX __INT_FAST16_MAX__
+#define INT_FAST32_MAX __INT_FAST32_MAX__
+#define INT_FAST64_MAX __INT_FAST64_MAX__
+
+///UINT_FASTN_MAX - C99 7.18.2.3/1
+///Maximum values of fastest minimum-width unsigned integer types
+#define UINT_FAST8_MAX __UINT_FAST8_MAX__
+#define UINT_FAST16_MAX __UINT_FAST16_MAX__
+#define UINT_FAST32_MAX __UINT_FAST32_MAX__
+#define UINT_FAST64_MAX __UINT_FAST64_MAX__
+
+///INTPTR_MIN - C99 7.18.2.4/1
+///Minimum value of pointer-holding signed integer type
+#define INTPTR_MIN (-INTPTR_MAX - 1)
+///INTPTR_MAX - C99 7.18.2.4/1
+///Maximum value of pointer-holding signed integer type
+#define INTPTR_MAX __INTPTR_MAX__
+///UINTPTR_MAX - C99 7.18.2.4/1
+///Maximum value of pointer-holding unsigned integer type
+#define UINTPTR_MAX __UINTPTR_MAX__
+
+///INTMAX_MIN - C99 7.18.2.5/1
+///Minimum value of greatest-width signed integer type
+#define INTMAX_MIN (-INTMAX_MAX - 1)
+///INTMAX_MAX - C99 7.18.2.5/1
+///Maximum value of greatest-width signed integer type
+#define INTMAX_MAX __INTMAX_MAX__
+///UINTMAX_MAX - C99 7.18.2.5/1
+///Maximum value of greatest-width unsigned integer type
+#define UINTMAX_MAX __UINTMAX_MAX__
+
+///C99 Note 221
+#ifdef __STDC_LIMIT_MACROS
+    ///PTRDIFF_{MIN,MAX} - C99 7.18.3/2
+    ///Limits of ptrdiff_t
+    #define PTRDIFF_MIN (-PTRDIFF_MAX - 1)
+    #define PTRDIFF_MAX __PTRDIFF_MAX__
+
+    ///SIG_ATOMIC_{MIN,MAX} - C99 7.18.3/3
+    ///Limits of sig_atomic_t
+    #define SIG_ATOMIC_MIN (-SIG_ATOMIC_MAX - 1)
+    #define SIG_ATOMIC_MAX __SIG_ATOMIC_MAX__
+
+    ///SIZE_MAX - C99 7.18.3/2
+    ///Limits of size_t
+    #define SIZE_MAX __SIZE_MAX__
+
+    ///WCHAR_{MIN,MAX} - C99 7.18.3/2
+    ///Limits of wchar_t
+    #define WCHAR_MIN (-WCHAR_MAX - 1)
+    #define WCHAR_MAX __WCHAR_MAX__
+
+    ///WINT_{MIN,MAX} - C99 7.18.3/2
+    ///Limits of wint_t
+    #define WINT_MIN (-WINT_MAX - 1)
+    #define WINT_MAX __WINT_MAX__
+
+    ///INTN_C - C99 7.18.4.1/1
+    ///Expands to an integer constant expression
+    ///corresponding to the type int_leastN_t.
+    #define INT8_C(c) __INT8_C(c)
+    #define INT16_C(c) __INT16_C(c)
+    #define INT32_C(c) __INT32_C(c)
+    #define INT64_C(c) __INT64_C(c)
+
+    ///UINTN_C - C99 7.18.4.1/1
+    ///Expands to an integer constant expression
+    ///corresponding to the type uint_leastN_t.
+    #define UINT8_C(c) __UINT8_C(c)
+    #define UINT16_C(c) __UINT16_C(c)
+    #define UINT32_C(c) __UINT32_C(c)
+    #define UINT64_C(c) __UINT64_C(c)
+
+    ///INTMAX_C - C99 7.18.4.2/1
+    ///Expands to an integer constant expression
+    ///having the value specified by its argument
+    ///and type intmax_t.
+    #define INTMAX_C(c) __INTMAX_C(c)
+    ///UINTMAX_C - C99 7.18.4.2/1
+    ///Expands to an integer constant expression
+    ///having the value specified by its argument
+    ///and type uintmax_t.
+    #define UINTMAX_C(c) __UINTMAX_C(c)
+#endif
