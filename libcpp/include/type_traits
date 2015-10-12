@@ -109,7 +109,8 @@
 #include "detail/type_traits/remove_extent.hh"
 #include "detail/type_traits/remove_all_extents.hh"
 
-///=> Pointer modifications (unimplemented)
+///=> Pointer modifications
+#include "detail/type_traits/add_pointer.hh"
 
 ///=> Other transformations
 #include "detail/type_traits/conditional.hh"
