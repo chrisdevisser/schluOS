@@ -1,3 +1,7 @@
 #pragma once
 
 #include "detail/concepts/type_traits.hh"
+
+//The following are (maybe with a couple exceptions) based on
+//N3351 - A Concept Design for the STL.
+#include "detail/concepts/equality_comparable.hh"
