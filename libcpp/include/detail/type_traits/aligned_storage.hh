@@ -23,7 +23,7 @@ template<
     size_t _Len,
     size_t _Align = alignof(typename __detail::__aligned_storage_helper<_Len>::__aligned_to_len)
 > struct aligned_storage {
-    union type {
+    struct type {
         alignas(_Align) unsigned char __dummy[_Len];
     };
 };
