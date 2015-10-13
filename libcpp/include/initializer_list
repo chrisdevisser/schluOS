@@ -19,7 +19,7 @@ struct initializer_list {
     ///Constructs an empty initializer_list object.
     ///Post: size() == 0.
     constexpr initializer_list() noexcept
-        : initializer_list{nullptr, 0} {}
+        : array__{}, len__{} {}
 
     ///Returns: The number of elements in the array.
     ///Complexity: Constant time
@@ -39,12 +39,8 @@ struct initializer_list {
     }
 
 private:
-    const_iterator array__; //points to the beginning of the array
-    size_t len__; //the number of elements
-
-    //Called by compiler
-    constexpr initializer_list(const_iterator __array, size_type __len) noexcept
-        : array__{__array}, len__{__len} {}
+    const_iterator array__; //required by GCC: points to the beginning of the array
+    size_t len__; //required by GCC: the number of elements
 };
 
 ///Returns: __list.begin()
