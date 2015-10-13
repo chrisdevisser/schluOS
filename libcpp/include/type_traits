@@ -116,6 +116,7 @@
 
 ///=> Other transformations
 #include "detail/type_traits/aligned_storage.hh"
+#include "detail/type_traits/aligned_union.hh"
 #include "detail/type_traits/conditional.hh"
 #include "detail/type_traits/detected_or.hh"
 #include "detail/type_traits/is_detected.hh"
