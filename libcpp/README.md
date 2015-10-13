@@ -1,6 +1,6 @@
 This is my implementation of the C++ standard library. See the doc directory for more information on individual headers.
 
-Firstly, the libstdc++ implementation is an inspiration for both compiler intrinsics and other implementation details.
+Firstly, the libstdc++ implementation is an inspiration for both compiler intrinsics and other implementation details. So is cppreference.com. I don't copy-paste things, but I am constantly reading both of them.
 
 This implementation looks to the future. Both C++17 features that have been voted in and others that are in TSes are treated as if they were permanent.
 
