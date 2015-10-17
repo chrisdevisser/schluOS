@@ -21,5 +21,6 @@
 ///Comparison concepts
 
 ///Object concepts
+#include "detail/concepts/destructible.hh"
 
 ///Function concepts
