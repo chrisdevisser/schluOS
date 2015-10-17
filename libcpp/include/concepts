@@ -4,4 +4,5 @@
 //See https://github.com/ericniebler/stl2
 
 #include "detail/concepts/object.hh"
+#include "detail/concepts/referenceable.hh"
 #include "detail/concepts/same.hh"
