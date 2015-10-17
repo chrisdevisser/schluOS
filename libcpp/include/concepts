@@ -12,3 +12,4 @@
 #include "detail/concepts/object.hh"
 #include "detail/concepts/referenceable.hh"
 #include "detail/concepts/same.hh"
+#include "detail/concepts/signed_integral.hh"
