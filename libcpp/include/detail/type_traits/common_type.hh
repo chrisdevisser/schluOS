@@ -5,7 +5,7 @@
 #include "decay.hh"
 #include "void_t.hh"
 
-#define __cpp_lib_common_type_sfinae 201401
+#define __cpp_lib_common_type_sfinae 201402
 
 namespace std {
 
