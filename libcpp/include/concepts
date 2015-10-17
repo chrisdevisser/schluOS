@@ -6,6 +6,7 @@
 #include "detail/concepts/common.hh"
 #include "detail/concepts/convertible_to.hh"
 #include "detail/concepts/derived_from.hh"
+#include "detail/concepts/integral.hh"
 #include "detail/concepts/lvalue_reference.hh"
 #include "detail/concepts/rvalue_reference.hh"
 #include "detail/concepts/object.hh"
