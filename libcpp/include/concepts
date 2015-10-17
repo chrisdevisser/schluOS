@@ -3,6 +3,7 @@
 //The following are mostly based on Eric Niebler's Ranges TS.
 //See https://github.com/ericniebler/stl2
 
+///Core language concepts
 #include "detail/concepts/assignable.hh"
 #include "detail/concepts/common.hh"
 #include "detail/concepts/convertible_to.hh"
@@ -11,7 +12,14 @@
 #include "detail/concepts/lvalue_reference.hh"
 #include "detail/concepts/rvalue_reference.hh"
 #include "detail/concepts/object.hh"
+#include "detail/concepts/reference.hh"
 #include "detail/concepts/referenceable.hh"
 #include "detail/concepts/same.hh"
 #include "detail/concepts/signed_integral.hh"
 #include "detail/concepts/unsigned_integral.hh"
+
+///Comparison concepts
+
+///Object concepts
+
+///Function concepts
