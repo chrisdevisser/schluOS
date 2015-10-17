@@ -6,7 +6,7 @@
 
 namespace std {
 
-///Integral - [concepts.lib.corelang.integral]
+///SignedIntegral - [concepts.lib.corelang.signedintegral]
 template<typename _T>
 concept bool SignedIntegral() {
     return Integral<_T> and is_signed_v<_T>;
