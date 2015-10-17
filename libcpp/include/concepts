@@ -13,3 +13,4 @@
 #include "detail/concepts/referenceable.hh"
 #include "detail/concepts/same.hh"
 #include "detail/concepts/signed_integral.hh"
+#include "detail/concepts/unsigned_integral.hh"
