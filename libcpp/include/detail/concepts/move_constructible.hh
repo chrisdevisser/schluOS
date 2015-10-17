@@ -3,6 +3,7 @@
 #include <detail/type_traits/remove_cv.hh>
 
 #include "constructible.hh"
+#include "convertible_to.hh"
 
 namespace std {
 
@@ -14,7 +15,7 @@ namespace std {
 ///rv's resulting state is unspecified.
 template<typename _T>
 concept bool MoveConstructible() {
-    return Constructible<_T, remove_cv_t<_T>&&>() and Constructible<remove_cv_t<_T>&&, _T>();
+    return Constructible<_T, remove_cv_t<_T>&&>() and ConvertibleTo<remove_cv_t<_T>&&, _T>();
 }
 
 }
