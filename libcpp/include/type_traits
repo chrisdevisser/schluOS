@@ -128,5 +128,6 @@
 #include "detail/type_traits/is_detected_convertible.hh"
 #include "detail/type_traits/is_detected_exact.hh"
 #include "detail/type_traits/nonesuch.hh"
+#include "detail/type_traits/result_of.hh"
 #include "detail/type_traits/underlying_type.hh"
 #include "detail/type_traits/void_t.hh"
