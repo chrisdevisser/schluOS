@@ -119,6 +119,7 @@
 ///=> Other transformations
 #include "detail/type_traits/aligned_storage.hh"
 #include "detail/type_traits/aligned_union.hh"
+#include "detail/type_traits/common_type.hh"
 #include "detail/type_traits/conditional.hh"
 #include "detail/type_traits/decay.hh"
 #include "detail/type_traits/detected_or.hh"
