@@ -10,14 +10,14 @@ namespace std {
 namespace __detail {
     template<typename _Type, typename... _Args>
     concept bool _ConstructibleObject = requires(_Args&&... __args) {
-        requires Destructible<_Type>;
+        requires Destructible<_Type>();
         _Type{forward<_Args>(__args)...};
         new _Type{forward<_Args>(__args)...};
     };
 
     template<typename _Type, typename... _Args>
     concept bool _BindableReference = requires(_Args&&... __args) {
-        requires Reference<_Type>;
+        requires Reference<_Type>();
         _Type(forward<_Args>(__args)...);
     };
 }
