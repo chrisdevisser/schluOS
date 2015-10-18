@@ -1,6 +1,7 @@
 #pragma once
 
 #include <detail/utility/forward.hh>
+#include <detail/utility/declval.hh>
 
 #include "same.hh"
 
@@ -13,8 +14,9 @@ namespace std {
 ///- addressof(t = v) == addressof(t).
 template<typename _Lhs, typename _Rhs = _Lhs>
 concept bool Assignable() {
-    return requires(_Lhs&& __Lhs, _Rhs&& __Rhs) {
-        {forward<_Lhs>(__Lhs) = forward<_Rhs>(__Rhs)} -> Same<_Lhs&>;
+    return requires(_Lhs&& __lhs, _Rhs&& __rhs) {
+        //{...} -> Same<_Lhs> is currently buggy in the compiler.
+        Same<decltype(forward<_Lhs>(__lhs) = forward<_Rhs>(__rhs)), _Lhs&>();
     };
 }
 
