@@ -25,6 +25,7 @@
 #include "detail/concepts/copy_constructible.hh"
 #include "detail/concepts/default_constructible.hh"
 #include "detail/concepts/destructible.hh"
+#include "detail/concepts/movable.hh"
 #include "detail/concepts/move_constructible.hh"
 
 ///Function concepts
