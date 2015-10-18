@@ -6,9 +6,9 @@ namespace std {
 
 ///ConvertibleTo - [concepts.lib.corelang.convertibleto]
 ///True iff is_convertible_v<_T> is true.
-template<typename _T>
+template<typename _From, typename _To>
 concept bool ConvertibleTo() {
-    return is_convertible_v<_T>;
+    return is_convertible_v<_From, _To>;
 }
 
 }
