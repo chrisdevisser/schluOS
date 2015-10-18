@@ -9,13 +9,13 @@ namespace std {
 ///forward - [forward]
 ///Simplifies the implementation of forwarding functions.
 Referenceable{_T}
-constexpr auto forward(remove_reference_t<_T>& __t) noexcept {
+constexpr decltype(auto) forward(remove_reference_t<_T>& __t) noexcept {
     return static_cast<_T&&>(__t);
 }
 
 ///If instantiated with an lvalue reference type, the program is ill-formed.
 template<Referenceable _T> requires not LvalueReference<_T>()
-constexpr auto forward(remove_reference_t<_T>&& __t) noexcept {
+constexpr decltype(auto) forward(remove_reference_t<_T>&& __t) noexcept {
     return static_cast<_T&&>(__t);
 }
 
