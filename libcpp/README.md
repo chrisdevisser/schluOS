@@ -13,3 +13,5 @@ Some files are in detail directly. The contents of these files are required to b
 - New libraries (e.g., concepts) are placed directly into `std` and into the main include directory and header files within rather than an `experimental` subdirectory and namespace.
 
 - Templates outside of type_traits are powered by concepts.
+
+- Customization points such as std::swap do ADL according to [Eric Niebler's work](http://ericniebler.com/2014/10/21/customization-point-design-in-c11-and-beyond/).
