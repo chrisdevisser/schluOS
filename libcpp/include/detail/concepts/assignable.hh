@@ -1,7 +1,6 @@
 #pragma once
 
 #include <detail/utility/forward.hh>
-#include <detail/utility/declval.hh>
 
 #include "same.hh"
 
